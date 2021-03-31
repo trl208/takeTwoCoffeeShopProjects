@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+        <property name="hibernate.connection.password">wiley123</property>
+        <property name="hibernate.connection.url">jdbc:oracle:thin:@localhost:1521:xe</property>
+        <property name="hibernate.connection.username">system</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</property>
+        <!-- whatever SQL is written by dialect show in on console -->
+        <property name="hibernate.show_sql">false</property>
+        <!-- SQL shld be commented on console -->
+        <property name="hibernate.use_sql_comments">true</property>
+         <!-- create : if table exist drop it n again create it, if table does not exist then create it -->
+         <property name="hibernate.hbm2ddl.auto">update</property>
+        
+        <!-- This class object will interact with db using hibernate -->
+  <mapping class="com.trl.coffee.bean.Coffee"/>
+  <mapping class="com.trl.coffee.bean.AddOn"/>
+  <mapping class="com.trl.coffee.bean.Customer"/>
+  <mapping class="com.trl.coffee.bean.Bill"/>
+  <mapping class="com.trl.coffee.bean.OrderDetail"/>
+  <mapping class="com.trl.coffee.bean.Orders"/>
+  <mapping class="com.trl.coffee.bean.Voucher"/>
+    </session-factory>
+</hibernate-configuration>
